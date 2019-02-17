@@ -1,0 +1,34 @@
+.body{background:lightblue;}
+.container{
+    padding:30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#jumbo{
+    background:lightcyan;
+    font-size:16px;
+    text-align: left;
+}
+input[type=submit]{
+    background-color: rgba(73, 231, 25, 0.973);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    animation-name: example;
+    animation-duration: 5s;
+}
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+a:any-link:hover{
+    color:lightgreen;
+    text-decoration: crimson;
+    text-orientation: sideways-right;
+}
+a:any-link{
+    color:blue;
+    text-anchor: middle;
+}

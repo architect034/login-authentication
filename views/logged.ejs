@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Logged And Tasks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/styles/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body class="body">
+    <div class="container">
+        <div class="jumbotron" id="jumbo">
+            <h2><b><a href="/logout">Logout</a></b></h2>
+            <h2><b>Hello <%=data.username%><br></b></h2>
+            <h2><b>Email : <%=data.email%></b></h2>
+            <ul>
+                <% for(var i=0; i<arr.length ; i++){ %>
+                    <li><h3><b>Task <%=(i+1)%> : <%= arr[i].text %></b></h3></li>
+                    <li><h4><b>Id : <%=arr[i]._id%></b></h4></li>
+                <% } %>
+            </ul>
+            <h2><b>Add Item</b></h2>
+            <form action="/profile" method="POST">
+                <div class="form-group">
+                    <label for="email"><h4>Email:</h4></label>
+                    <input type="email" class="form-control" name="email" value="<%= data.email%>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="text"><h4>Text:</h4></label>
+                    <input type="text" class="form-control" name="text" placeholder="enter your task/todo here" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add">
+                </div>
+            </form>
+            <a href="/delete"><h3><b>Delete Task</b></h3></a>
+        </div>
+    </div>
+</body>
+</html>
